@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useLayoutEffect} from 'react';
 import {connect} from 'react-redux';
 import { addMsg } from '../../Actions';
 import styles from './chat.module.css'

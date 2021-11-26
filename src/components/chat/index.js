@@ -8,11 +8,16 @@ const Chat = (props) => {
     const {messages, addMsgAction} = props;
 
     const inputRef = useRef();
+    const msgRef = useRef();
+    
     const addMessage = (e) => {
         e.preventDefault();
         addMsgAction(inputRef.current.value);
           
   }
+    useLayoutEffect(() => {
+    msgRef.current.scrollTop = msgRef.current.scrollHeight;
+    }, [messages.length]);
 
 
     const mapMessages = ({id_msg, id_user, nick, text, avatar, self}) => {
@@ -30,7 +35,7 @@ const Chat = (props) => {
 
         return(
         <>
-            <div className = {styles.main_chat}>
+            <div className = {styles.main_chat} ref={msgRef}>
                 <div>{messages.map(mapMessages)}</div>
                 <form className = {styles.inputMessage} onSubmit={addMessage}>
                     <input ref = {inputRef} type="text" placeholder='Сообщение...' ></input>

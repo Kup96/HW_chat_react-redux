@@ -8,9 +8,9 @@
 }
 .self{
     display: flex;
-    position: absolute;
-    right: 10px;
-    margin-top: 10px;
+    flex-direction: row-reverse;
+    margin-right: 10px;
+    margin-top: 50px;
 
 }
 .noSelf{

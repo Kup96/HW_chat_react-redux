@@ -16,8 +16,8 @@ const chatReducer = (state = initialState, action) => {
         case ACTION_TYPES.ADD_MESSAGE: {
             const {messages} = state;
             const {data} = action;
-            const {newMessage} = {id_msg: messages.length++, id_user: 4, nick: '', text: data, avatar: 'null', self: true};
-            const {newMessages} = [...messages, newMessage];
+            const newMessage = {id_msg: messages.length++, id_user: 4, nick: '', text: data, avatar: 'null', self: true};
+            const newMessages = [...messages, newMessage];
             return {messages: newMessages};
         }
         default: return state;

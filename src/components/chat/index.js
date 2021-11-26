@@ -10,7 +10,6 @@ const Chat = (props) => {
     const inputRef = useRef();
     const addMessage = (e) => {
         e.preventDefault();
-        console.log(inputRef.current.value);
         addMsgAction(inputRef.current.value);
           
   }
@@ -21,7 +20,7 @@ const Chat = (props) => {
                 <div className={self ? styles.self : styles.noSelf} key = {id_msg}>
                     <img className = {self ? styles.avatarSelf : styles.avatarNoSelf} src={avatar} alt={id_user}></img>
                     <div className = {self ? styles.messageContentSelf : styles.messageContentNoSelf}>
-                        <p className={self ? styles.nicknameSelf : styles.nicknameNoSelf}>{nick}</p>
+                        <p className={styles.nickname}>{nick}</p>
                         <p className={styles.messageText}>{text}</p>
                     </div>
                 </div>
